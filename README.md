@@ -1,6 +1,8 @@
-# Rhythm Tapper
+# Game: Rhythm Tapper
 
 The player presses a sequence of keys indicated by falling objects overlapping targets, all of which is synchronized with music playing in the background.
+
+![alt text](rhythm-tapper.png "Rhythm Tapper")
 
 ## Setup
 
