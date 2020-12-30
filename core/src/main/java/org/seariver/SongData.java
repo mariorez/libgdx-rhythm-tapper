@@ -5,18 +5,20 @@ import java.util.ArrayList;
 import com.badlogic.gdx.files.FileHandle;
 
 public class SongData {
+
     private String songName;
     private float songDuration;
     private ArrayList<KeyTimePair> keyTimeList;
     private int keyTimeIndex;
 
     public class KeyTimePair {
+
         private String key;
         private Float time;
 
-        public KeyTimePair(String k, Float t) {
-            key = k;
-            time = t;
+        public KeyTimePair(String key, Float time) {
+            this.key = key;
+            this.time = time;
         }
 
         public String getKey() {
@@ -29,27 +31,27 @@ public class SongData {
     }
 
     public SongData() {
-        keyTimeList = new ArrayList<KeyTimePair>();
+        keyTimeList = new ArrayList<>();
     }
 
-    public void setSongName(String s) {
-        songName = s;
+    public void setSongName(String name) {
+        songName = name;
     }
 
     public String getSongName() {
         return songName;
     }
 
-    public void setSongDuration(float f) {
-        songDuration = f;
+    public void setSongDuration(float duration) {
+        songDuration = duration;
     }
 
     public float getSongDuration() {
         return songDuration;
     }
 
-    public void addKeyTime(String k, Float t) {
-        keyTimeList.add(new KeyTimePair(k, t));
+    public void addKeyTime(String key, Float time) {
+        keyTimeList.add(new KeyTimePair(key, time));
     }
 
     public void resetIndex() {

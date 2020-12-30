@@ -6,7 +6,7 @@ The player presses a sequence of keys indicated by falling objects overlapping t
 
 ## Setup
 
-- **Java** 8 (Oracle build with JavaFX)
+- **Java** 8
 - **Gradle** Wrapper 6.7.1
 - **LigGDX** 1.9.12: https://libgdx.badlogicgames.com
 - Setup tool: https://github.com/tommyettinger/gdx-liftoff
