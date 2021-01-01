@@ -52,11 +52,11 @@ public class RhythmScreen extends BaseScreen {
         background.setSize(800, 600);
         BaseActor.setWorldBounds(background);
 
-        keyList = new ArrayList<String>();
+        keyList = new ArrayList<>();
         String[] keyArray = {"F", "G", "H", "J"};
         Collections.addAll(keyList, keyArray);
 
-        colorList = new ArrayList<Color>();
+        colorList = new ArrayList<>();
         Color[] colorArray = {Color.RED, Color.YELLOW, Color.GREEN, Color.BLUE};
         Collections.addAll(colorList, colorArray);
 
@@ -66,16 +66,16 @@ public class RhythmScreen extends BaseScreen {
         targetTable.row();
         mainStage.addActor(targetTable);
 
-        targetList = new ArrayList<TargetBox>();
+        targetList = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             TargetBox tb = new TargetBox(0, 0, mainStage, keyList.get(i), colorList.get(i));
             targetList.add(tb);
             targetTable.add(tb).pad(32);
         }
 
-        fallingLists = new ArrayList<ArrayList<FallingBox>>();
+        fallingLists = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
-            fallingLists.add(new ArrayList<FallingBox>());
+            fallingLists.add(new ArrayList<>());
         }
 
         advanceTimer = 0;
@@ -135,8 +135,7 @@ public class RhythmScreen extends BaseScreen {
         else
             advanceTimer = leadTime + gameMusic.getPosition();
 
-        while (!songData.isFinished()
-                && advanceTimer >= songData.getCurrentKeyTime().getTime()) {
+        while (!songData.isFinished() && advanceTimer >= songData.getCurrentKeyTime().getTime()) {
             String key = songData.getCurrentKeyTime().getKey();
             int i = keyList.indexOf(key);
 
@@ -155,7 +154,6 @@ public class RhythmScreen extends BaseScreen {
 
         // remove FallingBox instances that have passed below the target box
         for (int i = 0; i < 4; i++) {
-            String key = keyList.get(i);
             ArrayList<FallingBox> fallingList = fallingLists.get(i);
             if (fallingList.size() > 0) {
                 FallingBox fb = fallingList.get(0);
