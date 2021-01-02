@@ -102,6 +102,7 @@ public class RhythmScreen extends BaseScreen {
             scoreLabel.setText("Score: " + score + "\n" + "Max: " + maxScore);
             timeLabel.setText("Time: " + 0 + "\n" + "End: " + (int) songDuration);
 
+            message.displayCountdown();
             return true;
         });
 
@@ -169,6 +170,7 @@ public class RhythmScreen extends BaseScreen {
         }
 
         if (songData.isFinished() && !gameMusic.isPlaying()) {
+            message.displayCongratulations();
             songData = null;
         }
     }
